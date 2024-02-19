@@ -28,6 +28,7 @@ sudo apt-get install containerd
 echo "[!] Starting required stuff..."
 sudo systemctl enable containerd
 sudo systemctl start containerd
+sudo systemctl enable kubelet && sudo systemctl start kubelet
 echo "[!] Starting command given by kubeadm init... $1"
 $1
 echo "[!] Installation complete!"
