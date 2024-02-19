@@ -29,6 +29,7 @@ echo "[!] Starting required stuff..."
 sudo systemctl enable containerd
 sudo systemctl start containerd
 echo "[!] Starting kubeadm init --pod-network-cidr=$1"
+sudo chmod 644 /var/lib/kubelet/config.yaml
 sudo systemctl enable kubelet && sudo systemctl start kubelet
 sudo kubeadm init --pod-network-cidr=$1
 echo "[!] Installation complete!"
